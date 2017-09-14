@@ -4,6 +4,10 @@ html, body {
 	padding: 0;
 	margin: 0;
 }
+body {
+	max-height: 400px;
+
+}
 .clearfix:after {
    content: ".";
    visibility: hidden;
@@ -50,6 +54,8 @@ html, body {
 		line-height: 2;
 	}
 .nav {
+	position: fixed;
+	bottom: 50px;
 	margin: 0 auto;
 	width: 100%;
 }
