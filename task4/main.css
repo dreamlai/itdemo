@@ -82,17 +82,20 @@ header {
 		left: 2.5%;
 	}
 main {
-	position: relative;
+	position: absolute;
 	width: 100%;
-	margin-top: 0.6rem;
+	top: 0.5rem;
+	bottom: 0;
 	font-size: 0.2rem;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 	main label {
 		position: relative;
 		display: block;
 		height: 0.5rem;
-		margin-bottom: 0.15rem;
+		margin-top: 0.15rem;
 		background: #fff;
 	}
 	label:after {
@@ -151,6 +154,7 @@ main {
 		color: inherit;
 		font-weight: inherit;
 		letter-spacing: 0.1rem;
+		margin-top: 0.15rem;
 	}
 	main .more {
 		text-align: right;
