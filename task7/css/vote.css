@@ -58,10 +58,10 @@ main {
 		top: 0.5rem;
 		width: 100%;
 		z-index: 1;
+		background: rgba(185,233,245,0.5);
 	}
 	.rule {
 		position: relative;
-		background: #b9e9f5;
 		line-height: 0.5rem;
 		padding-left: 0.3rem;
 	}
@@ -95,10 +95,10 @@ main {
 		line-height: 0.4rem;
 		padding-left: 0.4rem;
 		color: #fff;
-		background: #29bde0;
+		background: rgba(41,189,224,.5);
 	}
 	.content {
-		padding-bottom: 0.15rem;
+		padding: 0.15rem 0;
 		overflow: hidden;
 	}
 		.content .col-xs-4 {
@@ -112,7 +112,7 @@ main {
 			background: #f5c97b;
 			border: 0.05rem solid #fff;
 			text-align: center;
-			margin: 0.2rem auto;
+			margin: 0 auto 0.4rem auto;
 			font-size: 0.16rem;
 			cursor: pointer;
 		}
@@ -127,25 +127,27 @@ main {
 			color: #fff;
 			background: #83b09a;
 		}
-		.option:hover ~ .ide-skill {
+		.option:hover .ide-skill {
 			display: block;
 		}
 		.ide-skill {
 			display: none;
 			position: absolute;
 			width: 0.95rem;
-			height: 0.2rem;
-			bottom: -0.1rem;
-			left: 0;
-			right: 0;
-			margin: auto;
+			height: 0.4rem;
+			bottom: -0.45rem;
+			left: -0.05rem;
+			padding: 0.1rem 0;
+			cursor: default;
 		}
 			.skill-item {
 				float: left;
 				margin-right: 0.05rem;
 				width: 0.2rem;
 				height: 0.2rem;
+				overflow: hidden;
 				background: url(../image/icon.png) no-repeat;
+				cursor: pointer;
 			}
 			.skill-item:nth-child(1) {
 				background-position: -0.1rem -0.1rem;
