@@ -32,17 +32,17 @@ header .head-top {
 		width: 25px;
 		height: 24px;
 		vertical-align: middle;
-		background: url(../image/icon.png);
+		background: url(../image/icon.png) no-repeat;
 		margin-right: 15px;
 	}
 		.other-links .wechat {
-			background-position: -10px -171px;
+			background-position: -10px -131px;
 		}
 		.other-links .qq {
-			background-position: -10px -83px;
+			background-position: -10px -43px;
 		}
 		.other-links .weibo {
-			background-position: -10px -127px;
+			background-position: -10px -87px;
 		}
 	header .nav-content {
 		background: #29b078;
@@ -67,7 +67,7 @@ header .head-top {
 			.navbar .logo {
 				line-height: 50px;
 			}
-			.logo img {
+			.navbar .logo img {
 				width: 80%;
 			}
 			.phone-num {
@@ -146,6 +146,7 @@ main {
 				}
 	.section {
 		position: relative;
+		word-break: break-all;
 	}
 		.section>p {
 			line-height: 70px;
@@ -154,14 +155,18 @@ main {
 			font-weight: 700;
 			border-bottom: 1px solid #d0d6d9;
 		}
-		@media (min-width: 978px) {
-			.section .col-md-4 {
+		.section .col-md-4 {
 			margin: 30px 0;
-			padding-left: 0;
+		}
+		@media (min-width: 1200px) {
+			.section .col-md-4 {
+				padding-left: 0;
 			}
 			.section .col-md-4:nth-child(3n+1) {
 				padding-right: 0;
 			}
+		}
+		@media (min-width: 978px) {
 			main .row:last-child {
 				margin-bottom: 100px;
 			}

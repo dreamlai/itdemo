@@ -32,17 +32,17 @@ header .head-top {
 		width: 25px;
 		height: 24px;
 		vertical-align: middle;
-		background: url(../image/icon.png);
+		background: url(../image/icon.png) no-repeat;
 		margin-right: 15px;
 	}
 		.other-links .wechat {
-			background-position: -10px -171px;
+			background-position: -10px -131px;
 		}
 		.other-links .qq {
-			background-position: -10px -83px;
+			background-position: -10px -43px;
 		}
 		.other-links .weibo {
-			background-position: -10px -127px;
+			background-position: -10px -87px;
 		}
 	header .nav-content {
 		background: #29b078;
@@ -212,37 +212,46 @@ main .slide-banner {
 		padding: 0 15px;
 	}
 	.how-study .col-md-3 {
-		height: 70px;
+		height: 60px;
 		margin: 30px 0;
+	}
+	.how-study .col-md-3:after {
+		position: absolute;
+		right: 5px;
+		top: 50%;
+		transform: translateY(-50%);
+		content: " ";
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		background: url(../image/icon.png) no-repeat -10px -175px;
 	}
 		.how-study .detail {
 			position: relative;
-			font-size: 14px;
+			font-size: 12px;
 			color: #999;
-			padding-left: 70px;
+			padding-left: 60px;
+			padding-right: 25px;
+			font-weight: 700;
 			top: 50%;
 			transform: translateY(-50%);
 			line-height: 1.5;
-		}
-		.how-study .aa {
-			height: 70px;
-			vertical-align: middle;
 		}
 		.how-study span {
 			position: absolute;
 			display: inline-block;
 			top: 0;
 			left: 0px;
-			width: 70px;
-			height: 70px;
-			line-height: 70px;
+			width: 60px;
+			height: 60px;
+			line-height: 60px;
 			font-size: 18px;
 			text-align: center;
 			color: #29b078;
 			background: #fff;
 			box-shadow: 0 0 1px #ccc;
 			border-radius: 100%;
-			margin-right: 10px;
+			margin-left: 5px;
 		}
 	.student {
 		margin: 15px 0; 
@@ -286,6 +295,17 @@ main .slide-banner {
 		margin: 15px 0;
 		transition: all .3s;
 		cursor: pointer;
+	}
+	@media (min-width: 978px){
+		.enterprise .en-logo {
+			width: 20%;
+			height: 150px;
+			line-height: 150px;
+			padding: 0;
+		}
+		.enterprise .en-logo:nth-child(5) img {
+			width: 80%;
+		}
 	}
 	.enterprise .col-sm-12:hover, .people:hover {
 		box-shadow: 0 15px 30px rgba(0,0,0,0.1);
