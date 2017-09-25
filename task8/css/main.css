@@ -226,6 +226,17 @@ main .slide-banner {
 		height: 30px;
 		background: url(../image/icon.png) no-repeat -10px -175px;
 	}
+	@media (min-width: 978px){
+		.how-study .col-md-3:nth-child(4n+1):after {
+			background: none;
+		}
+	}
+	@media (max-width: 978px){
+		.how-study .col-md-3:last-child:after {
+			background: none;
+		}
+	}
+
 		.how-study .detail {
 			position: relative;
 			font-size: 12px;
