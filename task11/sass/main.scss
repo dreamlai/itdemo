@@ -1,0 +1,165 @@
+//定义变量
+$bg: #5FC0CD;
+$size: 0.15rem;
+$height: 0.5rem;
+$slate: translateY(-50%);
+
+@mixin top($value) {
+	position: absolute;
+	top: 0;
+	#{$value}: 2.5%;
+}
+
+@mixin base($left, $height: 0.23rem){
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: $left;
+	height: $height;
+	transform: $slate;
+}
+
+@mixin icon($url){
+	background: url(../image/#{$url}.png) no-repeat;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+input:focus, button:focus {
+	outline: none;
+}
+html {
+	font-size: 625%;
+}
+body {
+	font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    color: #fff;
+    background-color: #f5f5f5;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+.clearfix {
+	&:after {
+	   content: ".";
+	   visibility: hidden;
+	   display: block;
+	   height: 0;
+	   clear: both;	
+	}
+}
+header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	font-size: $size;
+	line-height: $height;
+	background: $bg;
+}
+	.head-close {
+		@include top(right);
+	}
+	.head-title {
+		font-size: 0.17rem;
+		text-align: center;
+	}
+	.sign-in {
+		@include top(left);
+	}
+main {
+	position: absolute;
+	width: 100%;
+	top: $height;
+	bottom: 0;
+	font-size: 0.2rem;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+	label {
+		position: relative;
+		display: block;
+		height: $height;
+		margin-top: $size;
+		background: #fff;
+		&:after {
+			@include base(0.55rem, 0.3rem);
+			content: "";
+			width: 0.01rem;
+			background: #eaedee;
+		}
+	}
+		.icon {
+			@include base(0.2rem);
+			width: $size;
+		}
+			.username {
+				.icon {
+					@include icon(iphone);
+				}
+			}
+			.password {
+				.icon {
+					@include icon(pass);
+				}
+			}
+		input {
+			@include base(0.75rem);
+			width: calc(100% - 0.75rem);
+			border: 0;
+			padding: 0;
+			font-size: $size;
+			&:-ms-input-placeholder {
+		  		color: #999;
+			}
+			&::-webkit-input-placeholder {
+		  		color: #999;
+			}
+		}
+	.btn {
+		width: 100%;
+		height: $height;
+		text-align: center;
+		background: $bg;
+		border: 0;
+		cursor: pointer;
+		font-size: 0.2rem;
+		color: inherit;
+		font-weight: inherit;
+		letter-spacing: 0.1rem;
+		margin-top: $size;
+	}
+	.more {
+		text-align: right;
+		.forgot {
+			padding: 0 $size;
+			font-size: 0.1rem;
+			color: $bg;
+			text-decoration: underline;
+			font-weight: 700;
+		}
+	}
