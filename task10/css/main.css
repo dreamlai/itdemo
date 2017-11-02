@@ -146,7 +146,10 @@ ul, li {
 		.now-progress li {
 			width: 100%;
 			margin-bottom: 15px;
+<<<<<<< HEAD
 			text-align: center;
+=======
+>>>>>>> a8e4724... 任务100
 		}
 	}
 	.form-content .row {
@@ -178,15 +181,23 @@ ul, li {
 			border-top-left-radius: 5px;
 			border-top-right-radius: 5px;
 		}
+<<<<<<< HEAD
 		.form-tab .tab-title:before {
 			display: inline-block;
 			content: "";
 			width: 20px;
+=======
+		.tab-title:before {
+			display: inline-block;
+			content: "";
+			width: 19px;
+>>>>>>> a8e4724... 任务100
 			height: 18px;
 			background: url(../image/icon.png) -10px -10px;
 			margin: 0 10px 0 15px;
 			vertical-align: middle;
 		}
+<<<<<<< HEAD
 		.form-tab:nth-of-type(2) .tab-title:before {
 			width: 22px;
 			height: 20px;
@@ -197,6 +208,8 @@ ul, li {
 			height: 20px;
     		background-position: -10px -85px;
 		}
+=======
+>>>>>>> a8e4724... 任务100
 		.tab-content {
 			padding: 30px 0 30px 50px;
 			background: #fbfcff;
@@ -271,6 +284,10 @@ ul, li {
 				float: right;
 			}
 			.form-content .form-tab:nth-of-type(2) .more-info {
+<<<<<<< HEAD
+=======
+	
+>>>>>>> a8e4724... 任务100
 				margin-top: -20px;
 			}
 		}
