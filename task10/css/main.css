@@ -256,18 +256,29 @@ ul, li {
 			background: #1d7ad9;
 			font-size: 20px;
 		}
-		.more-info ul {
-			position: absolute;
-			width: 100%;
-			text-align: center;
+		.more-info {
+			position: relative;
+			width: 127px;
 			border: 1px solid #e8e8e8;
-			border-top: none;
-			display: none;
 			background: #fff;
+		}
+		.more-info .more-select {
+			position: relative;
+			-webkit-appearance: none;
+    		-moz-appearance: none;
+			width: 100%;
+			border: none;
+			outline: none;
+			color: #999;
+			line-height: 37px;
+			font-size: 14px;
+			font-weight: 700;
+			padding-left: 15px;
+			background: transparent;
+			z-index: 5;
 		}
 		@media(min-width: 992px) {
 			.tab-content .more-info {
-				position: relative;
 				float: right;
 			}
 			.form-content .form-tab:nth-of-type(2) .more-info {
@@ -276,34 +287,13 @@ ul, li {
 		}
 		@media(max-width: 991px) {
 			.tab-content .more-info {
-				position: relative;
 				float: none;
 				margin-left: 0;
 				margin: 0 auto;
 				margin-top: 15px;
-				width: 127px;
 			}
 		}
-		.tab-content .more {
-			position: relative;
-			display: inline-block;
-			width: 127px;
-			height: 37px;
-			line-height: 37px;
-			border: 1px solid #e8e8e8;
-			padding-left: 15px;
-			color: #999;
-			font-size: 14px;
-			text-align: left;
-			font-weight: 700;
-		}
-		.tab-content .more:hover {
-			text-decoration: none;
-		}
-		.tab-content .more-info:hover ul{
-			display: block;
-		}
-		.tab-content .more i {
+		.more-info i {
 			position: absolute;
 			display: inline-block;
 			width: 24px;
@@ -314,8 +304,9 @@ ul, li {
 			right: 5px;
 			margin: auto;
 			border-radius: 3px;
+			z-index: 4;
 		}
-		.tab-content .more i:after {
+		.more-info i:after {
 			position: absolute;
 			content: "";
 			display: block;
