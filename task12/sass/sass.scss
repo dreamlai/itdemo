@@ -1,0 +1,23 @@
+// 变量定义
+$color: #5fc0cd;
+$bg: background;
+
+@mixin half {
+	top: 50%;
+	transform: translateY(-50%);
+}
+@mixin bg($name, $size, $w, $h ,$suffix: png){
+	background: url(../image/#{$name}.#{$suffix}) no-repeat;
+	background-size: $size;
+	width: $w;
+	height: $h;
+}
+@mixin icon($top){
+	content: " ";
+	display: inline-block;
+	#{$bg}: url(../image/icon.png) no-repeat -5px $top;
+	#{$bg}-size: 0.4rem;
+	width: 0.22rem;
+	height: 0.22rem;
+	vertical-align: middle;
+}
