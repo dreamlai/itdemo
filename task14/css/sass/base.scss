@@ -450,4 +450,12 @@ footer {
 .glyphicon-chevron-left {
 	transform: rotate(-45deg);
 }
+.carousel-inner img {
+	display: block;
+    vertical-align: middle;
+    border: 0;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 /* 幻灯片END */
