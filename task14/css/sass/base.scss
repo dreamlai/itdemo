@@ -3,24 +3,17 @@
 	color: #29b078;
 	line-height: 3;
 	font-size: 14px;
+	overflow: hidden;
 }
 	.other-links {
 		a {
-			display: inline-block;
-			width: 25px;
-			height: 24px;
 			vertical-align: middle;
-			background: url(../image/icon.png) no-repeat;
-			margin-right: 15px;
+			padding: 0 10px;
+			color: #29b078;
+			border-right: 1px solid #ccc;
 		}
-		.wechat {
-			background-position: -10px -131px;
-		}
-		.qq {
-			background-position: -10px -43px;
-		}
-		.weibo {
-			background-position: -10px -87px;
+		a:last-child {
+			border-right: none;
 		}
 	}
 .g-title {
@@ -85,6 +78,21 @@ footer {
 /* 导航条折叠组件 */
 .navbar {
 	background: #29b078;
+	.logo {
+		float: left;
+		line-height: 50px;
+		img {
+			max-width: 200px;  
+		}
+	}
+}
+@media( min-width: 768px ){
+	.navbar .logo {
+		line-height: 100px;
+		img {
+			max-width: 300px;  
+		}
+	}
 }
 .navbar-toggle {
 	overflow: hidden;
@@ -387,6 +395,15 @@ footer {
   margin: 0;
   background-color: #fff;
 }
+.member .carousel-indicators li {
+	width: 15px;
+	height: 15px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+.member .carousel-indicators .active {
+  background-color: #29b078;;
+}
 .carousel-caption {
   position: absolute;
   right: 15%;
@@ -450,7 +467,7 @@ footer {
 .glyphicon-chevron-left {
 	transform: rotate(-45deg);
 }
-.carousel-inner img {
+.myslide img {
 	display: block;
     vertical-align: middle;
     border: 0;
