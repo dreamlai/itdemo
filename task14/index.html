@@ -41,28 +41,28 @@
 	</header>
 	<main>
 		<!-- 幻灯片 -->
-		<div class="carousel">
-			<ol class="icon-nav">
-				<li class="item active"></li>
-				<li class="item"></li>
-				<li class="item"></li>
+		<div class="carousel slide" data-ride="carousel" id="myslide">
+			<ol class="carousel-indicators">
+				<li data-target="#myslide" data-slide-to="0" class="active"></li>
+				<li data-target="#myslide" data-slide-to="1"></li>
+				<li data-target="#myslide" data-slide-to="2"></li>
 			</ol>
-			<ul class="picture-list">
-				<li class="item active">
+			<div class="carousel-inner">
+				<div class="item active">
 					<img src="image/banner-1.jpg">
-				</li>
-				<li class="item">
+				</div>
+				<div class="item">
 					<img src="image/banner-1.jpg">
-				</li>
-				<li class="item">
+				</div>
+				<div class="item">
 					<img src="image/banner-1.jpg">
-				</li>
-			</ul>
-			<a class="arrow-nav left" href="javascript:void(0);">
-				<span class="icon"></span>
+				</div>
+			</div>
+			<a class="left carousel-control" href="#myslide" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
 			</a>
-			<a class="arrow-nav right" href="javascript:void(0);">
-				<span class="icon"></span>
+			<a class="right carousel-control" href="#myslide" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
 			</a>
 		</div>
 		<div class="container centent">
@@ -295,17 +295,7 @@
 			});
 		}
 	})
-	// 幻灯片效果
-	$(".arrow-nav.right").click(function(){
-		$(".picture-list .active").css({'transform': 'translate3d(-100%, 0, 0)'}).on("transitionend webkitTransitionEnd oTransitionEnd otransitionend animationend",function(){
-				$(this).removeClass("active").next()
-			}).next().addClass("active");
-		// .next().addClass("next")
-		// .on("transitionend webkitTransitionEnd oTransitionEnd otransitionend animationend",function(){
-		// 		$(this).removeClass("next left");
-		// 	}).addClass("left")
-
-	})
 </script>
+<script src="js/carousel.js"></script>
 </body>
 </html>

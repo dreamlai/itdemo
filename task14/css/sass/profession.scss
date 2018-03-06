@@ -34,23 +34,16 @@
 			font-weight: 700;
 			border-bottom: 1px solid #d0d6d9;
 		}
-		@media (min-width: 978px) {
-			.section .col-md-4 {
-				padding: 15px 15px;
-				padding-left: 0;
-				&:nth-child(3n+1) {
-					padding-right: 0;
-				}
+		@media (min-width: 979px) {
+			.section .col-md-4 .box{
+				margin-right: 15px;
+				margin-top: 15px;
 			}
 			main .row {
-				margin-left: -15px;
 				margin-right: -15px;
 				&:last-child {
-					margin-bottom: 100px;
+					margin-bottom: 50px;
 				}
-			}
-			.section tr:last-child td {
-				padding: 10px 3px;
 			}
 		}
 		@media (max-width: 978px) {

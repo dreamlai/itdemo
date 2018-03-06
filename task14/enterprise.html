@@ -119,7 +119,20 @@
 			<p class="text-center h6">Copyright © 2015技能树 www.jnshu.com  All Rights Reserved | 京ICP备13005880号</p>
 		</div>
 	</footer>
+	<script>
+		// 导航条折叠效果
+		$isopen = false;
+		$(".navbar-btn").click(function(){
+			if(!$isopen){
+				$(".navbar-list").slideDown(300,function(){
+					$isopen = true;
+				});
+			}else{
+				$(".navbar-list").slideUp(300,function(){
+					$isopen = false;
+				});
+			}
+		})
+	</script>
 </body>
-<script>
-</script>
 </html>
