@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>九宫格</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="main.css">
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		.box {
+			width: 100%;
+			overflow: hidden;
+		}
+		.box div {
+			width: 31%;
+			padding-bottom: 31%;
+			float: left;
+			background: yellow;
+			border-radius: 15px;
+			margin: 1%;
+		}
+		.control {
+			text-align: center;
+		}
+		button {
+			background: #ccc;
+			border: none;
+			color: #fff;
+			padding: 5px 25px;
+			border-radius: 5px;
+			outline: none;
+			cursor: pointer;
+		}
+		.start {
+			background: #5bc0de;
+		}
+		.stop {
+			background: #ec971f;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div class="control">
+		<button class="start">开始</button>
+		<button class="stop">结束</button>
+	</div>
+
+	<script>
+		var rand = [];
+		var count = 3;
+		var time;
+		var isStart = false;
+		var grid = document.querySelectorAll(".box div");
+		var start = document.querySelector(".start");
+		var stop = document.querySelector(".stop");
+		
+		function getRand(){
+			rand = [];
+			while(rand.length < 3){
+				var isSame = true;
+				var num = Math.floor(Math.random()* 9);
+				if(rand.length == 0){
+					rand.push(num);
+				}
+				for(var i in rand){
+					if(num == rand[i]){
+						isSame = false;
+					}
+				}
+				if(isSame){
+					rand.push(num);
+				}
+			}
+		}
+
+		function getColor() {
+			var hex = Math.floor(Math.random()*0xffffff).toString(16);
+			while(hex.length < 6) {
+				hex = "0"  + hex;
+			}
+			return "#" + hex;
+		}
+		function setColor() {
+			for(var i = 0; i < grid.length; i++){
+				for(var j in rand){
+					if(i == rand[j] && isStart){
+						grid[i].style.background = getColor();
+						break;
+					}else{
+						grid[i].style.background = "yellow";
+					}
+				}
+			}
+			
+		}
+
+		start.addEventListener("click",function(){
+			if(!isStart){
+				isStart = true;
+				timer = setInterval(function(){
+					getRand();
+					setColor();
+				},1000)
+			}
+		})
+		stop.addEventListener("click",function(){
+			if(isStart){
+				clearInterval(timer);
+				isStart = false;
+				setColor();
+			}
+		})
+		
+	</script>
+</body>
+</html>
