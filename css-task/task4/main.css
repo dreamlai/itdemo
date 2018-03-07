@@ -1,0 +1,168 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+input:focus, button:focus {
+	outline: none;
+}
+html {
+	font-size: 625%;
+}
+body {
+	font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    color: #fff;
+    background-color: #f5f5f5;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	font-size: 0.15rem;
+	line-height: 0.5rem;
+	background: #5FC0CD;
+}
+	.head-close {
+		position: absolute;
+		top: 0;
+		right: 2.5%;
+	}
+	.head-title {
+		font-size: 0.17rem;
+		text-align: center;
+	}
+	.sign-in {
+		position: absolute;
+		top: 0;
+		left: 2.5%;
+	}
+main {
+	position: absolute;
+	width: 100%;
+	top: 0.5rem;
+	bottom: 0;
+	font-size: 0.2rem;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+	main label {
+		position: relative;
+		display: block;
+		height: 0.5rem;
+		margin-top: 0.15rem;
+		background: #fff;
+	}
+	label:after {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 0.01rem;
+		height: 0.3rem;
+		top: 50%;
+		left: 0.55rem;
+		transform: translateY(-50%);
+		background: #eaedee;
+	}
+		main .icon {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0.2rem;
+			transform: translateY(-50%);
+			width: 0.15rem;
+			height: 0.23rem;
+		}
+			.username .icon {
+				background: url(image/iphone.png) no-repeat;
+			}
+			.password .icon {
+				background: url(image/pass.png) no-repeat;
+			}
+		main input {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0.75rem;
+			transform: translateY(-50%);
+			height: 0.23rem;
+			width: calc(100% - 0.75rem);
+			border: 0;
+			padding: 0;
+			font-size: 0.15rem;
+		}
+		main input:-ms-input-placeholder{
+		    color: #999;
+		}
+
+		main input::-webkit-input-placeholder{
+		    color: #999;
+		}
+	main .btn {
+		width: 100%;
+		height: 0.5rem;
+		text-align: center;
+		background: #5FC0CD;
+		border: 0;
+		cursor: pointer;
+		font-size: 0.2rem;
+		color: inherit;
+		font-weight: inherit;
+		letter-spacing: 0.1rem;
+		margin-top: 0.15rem;
+	}
+	main .more {
+		text-align: right;
+	}
+		.more .forgot {
+			padding: 0 0.15rem;
+			font-size: 0.1rem;
+			color: #5fc0cd;
+			text-decoration: underline;
+			font-weight: 700;
+		}

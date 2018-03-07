@@ -1,0 +1,66 @@
+html, body {
+	background: #68CDD6;
+	color: #fff;
+	padding: 0;
+	margin: 0;
+}
+body {
+	max-height: 400px;
+
+}
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.head {
+	width: 100%;
+	height: 100px;
+	padding-top: 5px;
+	position: fixed;
+	top: 0px;
+	left: 5px;
+	background: #68CDD6;
+}
+	.logo {
+		width: 100px;
+		position: absolute;
+		top: 50px;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	.back {
+		width: 30px;
+		position: absolute;
+		left: 20px;
+		top: 10px;
+	}
+	.back img{
+		width: 40px;
+	}
+	.logo img{
+		width: 100px;
+	}
+.container {
+	margin-top: 100px;
+}
+	.main p {
+		padding: 50px 35px;
+		color: #fff;
+		text-align: center;
+		line-height: 2;
+	}
+.nav {
+	position: fixed;
+	bottom: 50px;
+	margin: 0 auto;
+	width: 100%;
+}
+	.left, .right {
+		float: left;
+		width: 50%;
+		text-align: center;
+	}

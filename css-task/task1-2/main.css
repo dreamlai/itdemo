@@ -1,0 +1,16 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+.box {
+	width: 100%;
+	overflow: hidden;
+}
+.box div {
+	width: 31%;
+	padding-bottom: 31%;
+	float: left;
+	background: yellow;
+	border-radius: 15px;
+	margin: 1%;
+}
