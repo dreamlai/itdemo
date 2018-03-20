@@ -1,0 +1,108 @@
+.main {
+    padding: .2rem .05rem;
+}
+    .process {
+        background: #fff;
+        border: .01rem solid #c9c9c9;
+
+        .day-num {
+            position: relative;
+            color: #29bde0;
+            font-size: .2rem;
+            letter-spacing: .05rem;
+            font-weight: 700;
+            line-height: 3;
+            border-bottom: 1px solid #c9c9c9;
+            cursor: pointer;
+
+            &:after {
+                position: absolute;
+                content: "";
+                top: .15rem;
+                right: .2rem;
+                width: .15rem;
+                height: .15rem;
+                transform: rotate(45deg);
+                border: {
+                    width: .01rem;
+                    style: solid;
+                    color: transparent #29bde0 #29bde0 transparent;
+                }
+            }
+        }
+        .content {
+            position: relative;
+            margin-left: .3rem;
+            padding: .3rem .5rem;
+            border-left: 1px solid #c9c9c9;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -.03rem;
+                width: 0;
+                height: 0;
+                margin: auto;
+                border: {
+                    style: solid;
+                    width: .03rem;
+                    color: #c9c9c9 transparent transparent transparent;
+                }
+            }
+            
+            .day, .night {
+                position: relative;
+                margin-bottom: .5rem;
+                
+                &:before {
+                    position: absolute;
+                    content: "";
+                    left: -.72rem;
+                    top: .07rem;
+                    width: .4rem;
+                    height: .4rem;
+                    border-radius: 100%;
+                    border: .01rem solid #c9c9c9;
+                    background: url(../images/icon.png) no-repeat,#fff;
+                }
+            }
+            .day:before {
+                background-position: 0 -2.05rem;
+            }
+            .night:before {
+                background-position: -.03rem -2.48rem;
+             }
+            .step {
+                position: relative;
+                font-size: .2rem;
+                width: 100%;
+                margin: auto;
+                color: #fff;
+                line-height: .6rem;
+                background: #24a7c6;
+                margin-bottom: .15rem;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: .8;
+                }
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: -.33rem;
+                    width: 0;
+                    height: 0;
+                    margin: auto;
+                    border: {
+                        style: solid;
+                        width: .1rem .17rem;
+                        color: transparent #24a7c6 transparent transparent;
+                    }
+                }
+            }
+        }
+    }

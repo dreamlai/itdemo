@@ -1,0 +1,312 @@
+@charset "UTF-8";
+html {
+  font-size: 625%; }
+
+body, div, span, h1, h2, h3, h4, h5, h6, p, a, em, img, i,
+dl, dt, dd, ol, ul, li, form, label, table, tbody, tfoot,
+thead, tr, th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, section,
+time, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+a {
+  text-decoration: none;
+  color: #fff; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 0; }
+
+body {
+  line-height: 1;
+  font: .16rem/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+  color: #333;
+  background-color: #f0f0f0;
+  font-weight: 100; }
+
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
+/* 位置布局 */
+header {
+  position: fixed;
+  width: 100%;
+  color: #fff;
+  z-index: 9;
+  top: 0;
+  background: #29bde0;
+  font-size: .2rem;
+  height: .5rem;
+  text-align: center;
+  border-bottom: 0.01rem solid rgba(255, 255, 255, 0.4); }
+  header .back {
+    display: block;
+    width: .5rem;
+    height: 100%;
+    position: absolute;
+    left: .1rem; }
+    header .back:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: .1rem;
+      height: .1rem;
+      transform: rotate(45deg);
+      border-style: solid;
+      border-width: .03rem;
+      border-color: transparent transparent #fff #fff; }
+  header .head-title {
+    line-height: .5rem; }
+  header .close {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: .2rem;
+    width: .22rem;
+    height: .22rem;
+    background: url(/images/720b02b9bf6021cfcccf44b13b5e8fdf.png) no-repeat -0.1rem -1.7rem; }
+
+.main {
+  margin-top: 0.5rem;
+  margin-bottom: 0rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: .1rem;
+  text-align: center;
+  margin-top: .5rem;
+  margin-bottom: .6rem;
+  overflow-y: auto;
+  overflow-x: hidden; }
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  transition: all .3s;
+  z-index: 99; }
+
+footer {
+  position: fixed;
+  width: 100%;
+  color: #fff;
+  z-index: 9;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  padding: .1rem 5vw;
+  box-sizing: border-box; }
+  footer .btn {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    line-height: .5rem;
+    background: #fab344; }
+
+/* 位置布局 end */
+/* 导航条折叠组件 */
+.navbar-toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  padding: .19rem .14rem .13rem;
+  margin-left: .1rem;
+  z-index: 999; }
+  .navbar-toggle .icon-bar {
+    display: block;
+    width: 0.22rem;
+    height: 0.02rem;
+    border-radius: .01rem;
+    background: #fff;
+    margin-bottom: .04rem; }
+
+.popup {
+  position: fixed;
+  width: 3rem;
+  box-shadow: 0.01rem 0.01rem 0.5rem rgba(0, 0, 0, 0.3);
+  background: #fff;
+  transition: all .3s;
+  z-index: 10000; }
+  @media (max-width: 400px) {
+    .popup {
+      width: 80vw; } }
+  .popup > .popup-header {
+    position: relative;
+    height: .4rem;
+    line-height: .4rem;
+    background: #f5f5f5;
+    padding: 0 .2rem;
+    padding-right: .5rem;
+    cursor: move;
+    overflow: hidden; }
+    .popup > .popup-header .small_btn {
+      position: absolute;
+      font-size: .16rem;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      padding: 0 .20rem;
+      color: #ccc; }
+      .popup > .popup-header .small_btn:hover {
+        color: #333; }
+  .popup > .popup-main {
+    padding: .2rem;
+    background: #eee;
+    word-wrap: break-word;
+    word-break: break-all; }
+  .popup > .popup-footer {
+    height: .3rem;
+    text-align: center;
+    padding: .1rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    .popup > .popup-footer > .btn {
+      display: inline-block;
+      height: .3rem;
+      line-height: .3rem;
+      width: .8rem;
+      background: #1E9FFF;
+      color: #fff;
+      cursor: pointer; }
+      .popup > .popup-footer > .btn:hover {
+        opacity: .8; }
+
+.auto {
+  animation: auto .3s forwards ease-in-out; }
+
+@keyframes auto {
+  0% {
+    opacity: 0;
+    transform: scale(0.5); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+
+.close-out {
+  animation: out .3s both ease-in-out;
+  -webkit-animation: out .3s both ease-in-out; }
+
+@keyframes out {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1); }
+  30% {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05); }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -o-transform: scale(0.7);
+    transform: scale(0.7); } }
+
+html, body {
+  background: #29bde0; }
+
+.main {
+  padding: .5rem 10vw; }
+
+.iden-card {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  background: #ffedc5;
+  border: .05rem solid #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center; }
+  .iden-card .order-num {
+    position: absolute;
+    top: -.27rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: .5rem;
+    line-height: .5rem;
+    font-size: .3rem;
+    color: #f56b81;
+    border-radius: 100%;
+    background: #fff;
+    border: .02rem solid #ffedc5; }
+  .iden-card .cover {
+    transition: opacity .5s;
+    width: 75%;
+    padding: 23vw 0; }
+
+.content {
+  position: absolute;
+  transition: opacity .5s;
+  width: 100%;
+  opacity: 0; }
+  .content .iden-name {
+    color: #29bde0;
+    font-size: .25rem;
+    line-height: 3;
+    font-weight: 500; }
+  .content .face {
+    width: 70%; }
+
+.enter-btn {
+  font-size: .3rem; }
+
+.rotate {
+  animation: rotate .5s both ease; }
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0); }
+  50% {
+    transform: rotateY(90deg); }
+  100% {
+    transform: rotateY(0); } }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjc3MvaWRlbnRpdHkuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
