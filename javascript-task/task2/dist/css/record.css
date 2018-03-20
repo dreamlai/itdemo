@@ -102,7 +102,7 @@ header {
     right: .2rem;
     width: .22rem;
     height: .22rem;
-    background: url(/images/720b02b9bf6021cfcccf44b13b5e8fdf.png) no-repeat -0.1rem -1.7rem; }
+    background: url(images/720b02b9bf6021cfcccf44b13b5e8fdf.png) no-repeat -0.1rem -1.7rem; }
 
 .main {
   margin-top: 0.5rem;
@@ -302,7 +302,7 @@ footer {
         height: .4rem;
         border-radius: 100%;
         border: .01rem solid #c9c9c9;
-        background: url(/images/720b02b9bf6021cfcccf44b13b5e8fdf.png) no-repeat, #fff; }
+        background: url(images/720b02b9bf6021cfcccf44b13b5e8fdf.png) no-repeat, #fff; }
     .process .content .day:before {
       background-position: 0 -2.05rem; }
     .process .content .night:before {
@@ -331,5 +331,3 @@ footer {
         border-style: solid;
         border-width: .1rem .17rem;
         border-color: transparent #24a7c6 transparent transparent; }
-
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjc3MvcmVjb3JkLmNzcyIsInNvdXJjZVJvb3QiOiIifQ==*/

@@ -1,5 +1,4 @@
 import '../css/loading.scss';
-import '../css/loading.scss';
 
  "use strict";
     var i = 3;

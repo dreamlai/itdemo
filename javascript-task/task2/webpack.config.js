@@ -14,7 +14,7 @@
       record: './src/js/record.js'
   	},
   	// debug
-    devtool: 'inline-source-map',
+    // devtool: 'inline-source-map',
     // webpack-dev-server 设置
     // devServer: {
     //   contentBase: './dist'
@@ -24,7 +24,7 @@
     output: {
       filename: 'js/[name].main.js',
       path: path.resolve(__dirname, 'dist'),
-      publicPath: '/'
+      // publicPath: '/'
     },
     module: {
       rules: [
