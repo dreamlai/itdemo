@@ -18,6 +18,9 @@ export default function popup(json){
         small_btn = document.createElement("a");
         small_btn.className = "small_btn";
         small_btn.innerHTML = "X";
+        small_btn.addEventListener("click", function(){
+            close();
+        });
         header.appendChild(title);
         header.appendChild(small_btn);
         // 主内容
@@ -36,6 +39,13 @@ export default function popup(json){
                 large_btn.className = "btn";
                 large_btn.innerHTML = name;
                 footer.appendChild(large_btn);
+                if(name == "确认"){
+                    large_btn.addEventListener("click",options.buttons[name]);
+                }else{
+                    large_btn.addEventListener("click", function(){
+                        close();
+                    });
+                }
             })(name);
         };
         
@@ -46,6 +56,9 @@ export default function popup(json){
         // 遮罩层
         mask = document.createElement("div");
         mask.className = "mask";
+        mask.addEventListener("click", function(){
+            close();
+        });
 
         document.body.appendChild(mask);
         document.body.appendChild(pop);
@@ -71,11 +84,5 @@ export default function popup(json){
     }
 
     window.addEventListener("resize", resize)
-    
-    small_btn.addEventListener("click", close);
-
-    var confirm = document.querySelectorAll(".popup .btn");
-    confirm[0].addEventListener("click",options.buttons["确认"]);
-    confirm[1].addEventListener("click", close);
     
 }

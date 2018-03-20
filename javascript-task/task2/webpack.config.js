@@ -24,7 +24,7 @@
     output: {
       filename: 'js/[name].main.js',
       path: path.resolve(__dirname, 'dist'),
-      publicPath: './'
+      publicPath: '/'
     },
     module: {
       rules: [
@@ -53,7 +53,7 @@
               }],
               // 在开发环境使用 style-loader
               fallback: "style-loader",
-              publicPath: '../'
+              // publicPath: '../'
           })
         },
         

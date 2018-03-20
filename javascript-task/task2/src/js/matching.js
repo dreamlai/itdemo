@@ -21,8 +21,7 @@ function defa(){
         "title": "温馨提示",
         "content": "请输入正确的玩家数量！",
         "buttons": {
-            "关闭":function(){
-                
+            "关闭": function(){
             }
         }
     });
