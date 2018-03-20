@@ -23,7 +23,7 @@
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	background: url("../images/icon.png") no-repeat $position ;
+	background: url(../images/icon.png) no-repeat $position ;
 	@include size($w, $h)
 }
 @mixin analog-btn( $bgcolor ) {

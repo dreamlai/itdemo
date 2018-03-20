@@ -24,7 +24,7 @@
     output: {
       filename: 'js/[name].main.js',
       path: path.resolve(__dirname, 'dist'),
-      // publicPath: '/'
+      publicPath: './'
     },
     module: {
       rules: [
@@ -41,7 +41,7 @@
         },
         {
 　　　　　　test: /\.html$/,
-　　　　　　loader: 'html-withimg-loader'
+　　　　　　loader: 'html-withimg-loader',
 　　　　},
         {
           test: /\.scss$/,
@@ -52,20 +52,19 @@
                   loader: "sass-loader"
               }],
               // 在开发环境使用 style-loader
-              fallback: "style-loader"
+              fallback: "style-loader",
+              publicPath: '../'
           })
         },
+        
+        // {test: /\.(png|jpg|jpeg|gif|woff)$/, loader: 'url?limit=4192&name=[path][name].[ext]' },//limit参数，代表如果小于大约4k则会自动帮你压缩base64编码的图片
         {
-          test: /\.(png|svg|jpg|gif)$/,
-          use: [
-          {
+            test: /\.(png|jpe?g|gif|ico)(\?\S*)?$/,
             loader: 'file-loader',
-            options: {
-              outputPath: 'images/'
+            query: {
+                name: 'images/[name].[ext]',
             }
-          }
-          ]
-        },
+        }, 
       ],
     },
     plugins: [
