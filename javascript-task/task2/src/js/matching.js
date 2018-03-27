@@ -1,8 +1,7 @@
 import "../css/matching.scss";
-import popup from '../js/module/popup.js';
+import '../js/module/popup.js';
 
  "use strict";
-
 var input_num = document.querySelector(".input-num"),
     enter_watch = document.querySelector(".enter-watch"),
     killer_num = document.querySelector(".killer .num"),
@@ -21,8 +20,7 @@ function defa(){
         "title": "温馨提示",
         "content": "请输入正确的玩家数量！",
         "buttons": {
-            "关闭": function(){
-            }
+            "关闭": function(){}
         }
     });
     input_num.value = "8";

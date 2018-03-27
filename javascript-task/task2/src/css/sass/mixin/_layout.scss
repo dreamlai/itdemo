@@ -8,16 +8,6 @@
 	color: #fff;
 	z-index: 9;
 }
-@mixin main( $top, $bottom ) {
-	margin: {
-		top: #{$top}rem;
-		bottom: #{$bottom}rem;
-	}
-	overflow: {
-		y: auto;
-		x: hidden;
-	}
-}
 @mixin icon-btn( $w, $h ,$position ) {
 	display: block;
 	position: absolute;

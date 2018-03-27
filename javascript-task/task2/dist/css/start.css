@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font-size: 625%; }
 
@@ -49,7 +50,16 @@ body {
   font: .16rem/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
   color: #333;
   background-color: #f0f0f0;
-  font-weight: 100; }
+  font-weight: 100;
+  -moz-user-select: none;
+  /*火狐*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -ms-user-select: none;
+  /*IE10*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none; }
 
 .clearfix:after {
   content: ".";

@@ -1,5 +1,6 @@
 import '../css/home.scss';
 
+sessionStorage.clear();
 var item = document.querySelectorAll(".game-list .item"),
 
     a_target = document.querySelectorAll(".game-list a"),

@@ -13,19 +13,19 @@
       judge_diary: './src/js/diary.js',
       record: './src/js/record.js',
       result: './src/js/result.js'
-  	},
-  	// debug
+    },
+    // debug
     // devtool: 'inline-source-map',
     // webpack-dev-server 设置
     // devServer: {
     //   contentBase: './dist'
     // },
-  	// 输出index.html文件
-  	
+    // 输出index.html文件
+    
     output: {
       filename: 'js/[name].main.js',
       path: path.resolve(__dirname, 'dist'),
-      publicPath: './'
+      publicPath: '/'
     },
     module: {
       rules: [
@@ -54,7 +54,6 @@
               }],
               // 在开发环境使用 style-loader
               fallback: "style-loader",
-              publicPath: '../'
           })
         },
         

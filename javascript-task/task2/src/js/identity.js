@@ -1,9 +1,9 @@
 import "../css/identity.scss";
-import popup from '../js/module/popup.js';
+import '../js/module/popup.js';
 
 // 判断是否有游戏配置
 if(!sessionStorage.getItem("game")){
-    window.location.href = "matching.html";
+    window.location.href = "home.html";
 }
 
 // 标签节点获取
@@ -18,11 +18,12 @@ var iden_card = document.querySelector(".iden-card"),
 
 // 提取游戏配置
 var game_config = JSON.parse(sessionStorage.getItem("game"));
+var player_state = {};
 
 var rand = [];
-var player_arr = [];
 var len = game_config.player_num;
 
+console.log(player_state)
 // 取玩家数量的随机数
 function random(){
     rand = [];
@@ -48,10 +49,16 @@ function matching(){
     var k_num = game_config.killer;
     var c_num = game_config.civilian;
     for (var i = 0; i < k_num; i++) {
-        player_arr[rand[i]] = "杀手";
+        player_state[rand[i] + 1] = {
+            name: "杀手",
+            state: "live"
+        };
     }
     for (var i = 0; i < c_num; i++) {
-        player_arr[rand[i + k_num]] = "村民";
+        player_state[rand[i + k_num] + 1] = {
+            name: "村民",
+            state: "live"
+        };
     }
 }
 
@@ -62,13 +69,13 @@ var isSee = false;
 // 进行身份传递
 enter_btn.addEventListener("click", function(){
     if(i > len){
-        sessionStorage.setItem("all-player", player_arr );
+        sessionStorage.setItem("player_state",JSON.stringify(player_state));
         window.location.href = "judge-diary.html";
     }else if(!isSee){
         iden_card.classList.add("rotate");
         cover.style.opacity = "0";
         content.style.opacity = "1";
-        iden_name.innerHTML = player_arr[i-1];
+        iden_name.innerHTML = player_state[i].name;
         if(i == len){
             enter_btn.innerHTML = "法官查看";
         }else{
@@ -100,9 +107,7 @@ end.addEventListener("click", function(){
             "确认":function(){
                 window.location.href = "home.html";
             },
-            "关闭":function(){
-                
-            }
+            "关闭":function(){}
         }
     });
 });

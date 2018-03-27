@@ -1,0 +1,68 @@
+
+header .back {
+    position: absolute;
+    width: .25rem;
+    height: .21rem;
+    top: 0;
+    bottom: 0;
+    left: .2rem;
+    margin: auto;
+    background: url(../images/icon.png) -12px 23px;
+
+    &:before {
+        border: none;
+        transform: rotate(0);
+    }
+}
+
+.main {
+    padding: 0;
+}
+.result {
+        background: #29bde0;
+        padding: .15rem 10%;
+        text-align: center;
+
+        img {
+            width: 50vw;
+        }
+}
+.data {
+    color: #fff;
+    font-size: 0.14rem;
+    text-align: left;
+    margin-top: 0.1rem;
+}
+    .census-list {
+        margin-top: 0.1rem;
+        .item {
+            float: left;
+            margin-right: 0.2rem;
+        }
+    }
+    
+.detail {
+    background: #fff;
+    padding: .1rem 5%;
+    border-bottom: 0.01rem solid #ddd;
+    overflow: hidden;
+    text-align: left;
+    font-size: .14rem;
+    .day-num {
+        color: #000;
+        font-weight: 500;
+    }
+    .process {
+        color: #a6a6a6;
+        margin: .1rem 0;
+    }
+}
+
+footer .again {
+    font-size: .25rem;
+    width: 2rem;
+    border-radius: .05rem;
+}
+footer .btn:nth-child(1) {
+    margin: 0 auto;
+}
