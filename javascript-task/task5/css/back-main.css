@@ -1,0 +1,110 @@
+body, div, span, h1, h2, h3, h4, h5, h6, p, a, em, img, i,
+dl, dt, dd, ol, ul, li, form, label, table, tbody, tfoot,
+thead, tr, th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, section,
+time, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block; }
+
+a {
+    text-decoration: none;
+    color: #333; }
+
+ol, ul {
+    list-style: none; }
+
+blockquote, q {
+    quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none; }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 0; }
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    font-size: 16px;
+    height: 100%;
+    overflow: hidden;
+}
+input:focus, button:focus {
+    outline: none;
+}
+.clearfix:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+header {
+    border-bottom: 1px solid #ccc;
+    line-height: 50px;
+    padding: 0 20px;
+}
+    .title {
+        float: left;
+        font-weight: 700;
+    }
+    .user-set {
+        float: right;
+    }
+        .user {
+            font-size: 14px;
+            margin-right: 15px;
+        }
+        .close {
+            color: #fff;
+            line-height: 25px;
+            padding: 0 15px;
+            background: #03A9F4;
+            border-radius: 5px;
+        }
+.main {
+    position: absolute;
+    height: 100%;
+    overflow: hidden;
+}
+    .sibe-bar {
+        float: left;
+        width: 100px;
+        padding: 15px;
+    }
+        .item {
+            margin-bottom: 10px;
+        }
+        .item a {
+            font-size: 14px;
+            display: block;
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .item a:hover {
+            background: #ccc;
+        }
+        .content {
+            height: 100%;
+            overflow: hidden;
+            border-left: 1px solid #03A9F4;
+        }
