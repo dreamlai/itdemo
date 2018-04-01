@@ -1,13 +1,15 @@
 var Ajax = {
-        get: function(url, fn){
+        post: function(user, fn){
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", url, true);
+            var url = "/carrots-admin-ajax/a/login/";
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function(){
                 if(xhr.readyState == 4 && xhr.status == 200 || xhr.status == 304){
                     fn.call(this, xhr.responseText);
                 }
             }
-            xhr.send();
+            xhr.send(user);
         }
     }
 var username = document.querySelector(".username input");
@@ -16,19 +18,32 @@ var tips = document.querySelector(".tips");
 var btn = document.querySelector(".btn");
 function check(){
     var _this;
-    Ajax.get("http://www.dreamlai.com:888/carrots-admin-ajax?callback=user", function(){
+    Ajax.post("name=" + username.value + "&" + "pwd=" + password.value, function(){
         _this = JSON.parse(this.responseText);
-        if(username.value == _this["name"] && password.value == _this["password"]){
-            sessionStorage.setItem("name", username.value);
+        if(_this.message == "success"){
+            sessionStorage.setItem("data", this.responseText);
             window.location.href = "backstage.html";
         }else{
-            tips.innerHTML = "用户或密码错误！";
+            tips.innerHTML = _this.message;
             tips.style.display = "block";
         }
     })
 }
 
-btn.addEventListener("click", check)
+btn.addEventListener("click", function(){
+    if(!username.value.trim() || username.value.length < 4 || username.value.length > 18){
+        clear();
+        tips.innerHTML = "用户为空或长度错误！";
+        tips.style.display = "block";
+    }else if(!password.value || password.value.length < 4 || password.value.length < 18){
+        clear();
+        tips.innerHTML = "密码为空或长度错误！";
+        tips.style.display = "block";
+    }else{
+        check();
+    }
+})
+
 function clear(){
     tips.innerHTML = "";
 }
