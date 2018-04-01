@@ -35,7 +35,7 @@ btn.addEventListener("click", function(){
         clear();
         tips.innerHTML = "用户为空或长度错误！";
         tips.style.display = "block";
-    }else if(!password.value || password.value.length < 4 || password.value.length < 18){
+    }else if(!password.value || password.value.length < 4 || password.value.length > 18){
         clear();
         tips.innerHTML = "密码为空或长度错误！";
         tips.style.display = "block";
