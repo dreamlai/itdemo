@@ -1,0 +1,14 @@
+<ul class="pagination pull-right" ng-controller="form">
+    <li class="page pull-left">每页显示
+        <input type="text" value="{{size}}" ng-model="$parent.size" ng-change="changeSize()">
+       条
+    </li>
+    <li><a ng-click="j_index()">首页</a></li>
+    <li ng-repeat="num in pages" ng-class="{true:'active'}[page==num]"><a ng-click="jume(num)" ng-disabled="isDisabled(num)">{{num}}</a></li>
+    <li><a ng-click="j_last()">末页</a></li>
+    <li class="page pull-right">去第
+        <input type="text" ng-model="jpage">
+       页
+       <button class="btn btn-default" ng-click="custom()">确定</button>
+    </li>
+</ul>
