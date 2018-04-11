@@ -1,15 +1,16 @@
-angular.module("userApp", ["ui.bootstrap"]).controller("mydata", function ($scope) {
-    console.log($scope);
-    $scope.dat = new Date();
-    $scope.format = "yyyy/MM/dd";
-    $scope.altInputFormats = ['yyyy/M!/d!'];
-    $scope.popup1 = {
-        opened: false
-    };
-    $scope.open1 = function () {
-        $scope.popup1.opened = true;
-    };
-});
+// angular.module("userApp", ["ui.bootstrap"]).controller("mydata", function ($scope) {
+//     console.log($scope);
+//     $scope.dat = new Date();
+//     $scope.format = "yyyy/MM/dd";
+//     $scope.altInputFormats = ['yyyy/M!/d!'];
+//     $scope.popup1 = {
+//         opened: false
+//     };
+//     $scope.open1 = function () {
+//         $scope.popup1.opened = true;
+//     };
+// });
+
 
 var app = angular.module("userApp", ["ngRoute"]);
 app.config(['$routeProvider', function ($routeProvider) {
@@ -21,7 +22,7 @@ app.config(['$routeProvider', function ($routeProvider) {
         templateUrl: './modules/article.html?ver=8885.0'
     })
     .when('/addarticle', {
-        templateUrl: './modules/addarticle.html'
+        templateUrl: './modules/addarticle.html?ver=11'
     })
     .otherwise({redirectTo: '/'}); //表示没有匹配到正确路由时跳转到这里
 }]);
@@ -125,15 +126,7 @@ app.controller('mydata', function ($scope, $http, $location) {
     }; 
 
     $scope.go = function(index){
-        switch(index)
-        {
-            case "add":
-                $location.url("/addarticle");
-                break;
-            case "article":
-                $location.url("/article");
-                break;
-        }
+        $location.url("/addarticle");
     };
 
     $scope.isDisabled = function(num){
@@ -153,7 +146,9 @@ app.controller('mydata', function ($scope, $http, $location) {
         if($scope.j_page > $scope.all_page){
             $scope.j_page = $scope.all_page;
         }
-    }
+    };
+
+
 })
 
 
