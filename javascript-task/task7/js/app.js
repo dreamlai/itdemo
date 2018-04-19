@@ -5,7 +5,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state("main", {
         url: "/",
-        templateUrl: "./modules/main.html"
+        templateUrl: "./modules/main.html?ver=2.0"
     })
     .state("article", {
         url: "/article/:page/:size",
@@ -13,10 +13,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             "page": "1",
             "size": "10"
         },
-        templateUrl: "./modules/article.html?7",
+        templateUrl: "./modules/article.html?ver=2.0",
         resolve: {
             loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){    
-                return $ocLazyLoad.load('js/article_main.js?5');    
+                return $ocLazyLoad.load('js/article_main.js?ver=2.0');    
             }]
         },
         controller:'mydata'
@@ -24,7 +24,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     .state("add", {
         url: "/add",
-        templateUrl: "./modules/add_article.html"
+        templateUrl: "./modules/add_article.html?ver=2.0"
     })
 })
 

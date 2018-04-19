@@ -37,6 +37,7 @@ app.controller('mydata', function (gets,$scope, $http, $location, $stateParams, 
         $scope.type = "";
         $scope.status = "";
         $scope.isHide = true;
+        $location.url($location.path());
         promise = gets.article();
         _get();
     }
@@ -122,7 +123,7 @@ app.controller('mydata', function (gets,$scope, $http, $location, $stateParams, 
         if($scope.rtime1){
             $scope.rtime1 = $scope.rtime1.valueOf()
         }
-        
+
         if($scope.rtime2){
             $scope.rtime2 = $scope.rtime2.valueOf()
             console.log($scope.rtime1.valueOf())
