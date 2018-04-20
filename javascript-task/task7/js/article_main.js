@@ -7,19 +7,47 @@ app.controller('mydata', function (gets,$scope, $http, $location, $stateParams, 
     $scope.pages = [];
     $scope.isHide = true;
     var promise;
-
     if($location.search() !== ""){
         $scope.rtime1 = new Date($filter('date')($location.search().startAt, 'yyyy-MM-dd'));
         $scope.rtime2 = new Date($filter('date')($location.search().endAt, 'yyyy-MM-dd'));
         $scope.type = $location.search().type;
         $scope.status = $location.search().status;
-        promise = gets.search($location.search());
-    }else{
-        promise = gets.article();
     }
+    var search = function(){
+        if($scope.rtime1){
+            $scope.rtime1 = $scope.rtime1.valueOf()
+        }
 
+        if($scope.rtime2){
+            $scope.rtime2 = $scope.rtime2.valueOf()
+            console.log($scope.rtime1.valueOf())
+        }
 
+        var page_num = {
+            "page": $scope.jume_page,
+            "size": $scope.show_page
+        }
+
+        var search_data = {
+            "startAt": $scope.rtime1,
+            "endAt": $scope.rtime2,
+            "type": $scope.type,
+            "status": $scope.status,
+        }
+
+        angular.forEach(search_data, function(value, key){
+            if(!value){
+               delete search_data[key];
+            }
+        })
+
+        $location.url($location.path()+"?" + $.param(search_data))
+
+        promise = gets.search($.extend(search_data, page_num));
+    }
     var _get = function(){
+        $scope.isHide = true;
+        search();
         promise.then(function (Data) {  //正确请求成功时处理  
             $scope.datas = Data.data.data.articleList;
             $scope.all_page = Math.ceil(Data.data.data.total/$scope.show_page);
@@ -36,16 +64,14 @@ app.controller('mydata', function (gets,$scope, $http, $location, $stateParams, 
         $scope.rtime2 = "";
         $scope.type = "";
         $scope.status = "";
-        $scope.isHide = true;
-        $location.url($location.path());
-        promise = gets.article();
+        $location.url("/article/"+ 1 +"/"+10);
         _get();
     }
 
     $scope.jume = function(page){
         if (page == $scope.jume_page || page == "···") return;
-        $scope.isHide = true;
         $location.url("/article/"+ page +"/"+$scope.show_page);
+        _get()
     };
 
     $scope.j_index = function(){
@@ -61,9 +87,13 @@ app.controller('mydata', function (gets,$scope, $http, $location, $stateParams, 
     };
 
     var calculateIndexes = function (current, length, displayLength) { 
-        var indexes = [];  
+        current = Number(current);
+        length = Number(length);
+        displayLength = Number(displayLength);
+        var indexes = [];
         var start = Math.round(current - displayLength / 2);  
         var end = Math.round(current + displayLength / 2);  
+
         if (start <= 1) { 
             start = 1;
             end = start + displayLength - 1;  
@@ -90,13 +120,17 @@ app.controller('mydata', function (gets,$scope, $http, $location, $stateParams, 
     }; 
 
     $scope.custom_jume = function(){
+        if($scope.jume_page > $scope.all_page){
+            $scope.jume_page = 1;
+        }
         if(!$scope.show_page){
             return false;
         }else if(!$scope.j_page){
-            $location.url("/article/"+ $scope.jume_page +"/"+$scope.show_page);
+            $location.url("/article/"+ 1 +"/"+$scope.show_page);
         }else{
             $location.url("/article/"+ $scope.j_page +"/"+$scope.show_page);
         }
+        _get()
     }
 
     $scope.isDisabled = function(num){
@@ -119,33 +153,7 @@ app.controller('mydata', function (gets,$scope, $http, $location, $stateParams, 
     };
 
     $scope.search = function(){
-        $scope.isHide = true;
-        if($scope.rtime1){
-            $scope.rtime1 = $scope.rtime1.valueOf()
-        }
-
-        if($scope.rtime2){
-            $scope.rtime2 = $scope.rtime2.valueOf()
-            console.log($scope.rtime1.valueOf())
-        }
-
-        var search_data = {
-            "startAt": $scope.rtime1,
-            "endAt": $scope.rtime2,
-            "type": $scope.type,
-            "status": $scope.status,
-        }
-
-        angular.forEach(search_data, function(value, key){
-            if(!value){
-               delete search_data[key];
-            }
-        })
-
-        $location.url($location.path()+"?" + $.param(search_data))
-
-        promise = gets.search(search_data);
-
+        $location.url("/article/"+ 1 +"/"+$scope.show_page);
         _get();
     }
 

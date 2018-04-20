@@ -1,18 +1,23 @@
-angular.module("userApp")
-    .factory("gets", function($http,$stateParams){
+var get_data = angular.module("userApp")
+    get_data.factory("gets", function($http,$stateParams){
         return {
-            article: function(){
-                return $http.get('/carrots-admin-ajax/a/article/search', {  
-                    params: {  
-                        "page": $stateParams.page,
-                        "size": $stateParams.size
-                    }
-                })
-            },
             search: function(search_data){
                 return $http.get('/carrots-admin-ajax/a/article/search', {  
                     params: search_data
                 })
             }
+        }
+    })
+    get_data.factory("posts", function($http,$stateParams){
+        return {
+            imgFile: function(file){
+                return $http.post('/carrots-admin-ajax/a/u/img/task', {  
+                    data: {
+                        "file": file
+                    },
+                    headers: {'Content-Type': "multipart/form-data"}
+                })
+            },
+            
         }
     })

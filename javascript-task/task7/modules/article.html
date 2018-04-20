@@ -99,9 +99,9 @@
                 <input type="text" ng-model="show_page" ng-change="changeSize()">
                条
             </li>
-            <li><a ng-click="j_index()">首页</a></li>
+            <li><a ng-click="j_index()" ng-disabled="jume_page == 1">首页</a></li>
             <li ng-repeat="num in pages" ng-class="{true:'active'}[jume_page==num]"><a ng-click="jume(num)" ng-disabled="isDisabled(num)">{{num}}</a></li>
-            <li><a ng-click="j_last()">末页</a></li>
+            <li><a ng-click="j_last()" ng-disabled="jume_page == all_page">末页</a></li>
             <li class="page pull-right">去第
                 <input type="text" ng-model="j_page" ng-change="change()">
                页
