@@ -1,26 +1,28 @@
-var app = angular.module("userApp", ["ui.bootstrap"]);
+var app = angular.module("userApp", ["ui.bootstrap","ui.router"]);
 
-app.controller('mydata', function (gets,$scope, $http, $location, $stateParams, $filter) {
+app.controller('mydata', function (type, state, gets, posts, $scope, $http, $location, $stateParams, $filter, $state) {
     $scope.jume_page = $stateParams.page;
     $scope.show_page = $stateParams.size;
     $scope.all_page =0;
     $scope.pages = [];
     $scope.isHide = true;
     var promise;
-    if($location.search() !== ""){
+    
+    if(JSON.stringify($location.search()) !== "{}"){
         $scope.rtime1 = new Date($filter('date')($location.search().startAt, 'yyyy-MM-dd'));
         $scope.rtime2 = new Date($filter('date')($location.search().endAt, 'yyyy-MM-dd'));
-        $scope.type = $location.search().type;
-        $scope.status = $location.search().status;
+        $scope.searchTypes = $location.search().type;
+        $scope.searchState = $location.search().status;
     }
+
     var search = function(){
+
         if($scope.rtime1){
             $scope.rtime1 = $scope.rtime1.valueOf()
         }
 
         if($scope.rtime2){
             $scope.rtime2 = $scope.rtime2.valueOf()
-            console.log($scope.rtime1.valueOf())
         }
 
         var page_num = {
@@ -31,13 +33,18 @@ app.controller('mydata', function (gets,$scope, $http, $location, $stateParams, 
         var search_data = {
             "startAt": $scope.rtime1,
             "endAt": $scope.rtime2,
-            "type": $scope.type,
-            "status": $scope.status,
+            "type": $scope.searchTypes,
+            "status": $scope.searchState,
         }
-
         angular.forEach(search_data, function(value, key){
-            if(!value){
+            if(!value && value !== 0){
                delete search_data[key];
+            }else if(angular.isObject(value)){
+                if(!value.id && value.id !== 0){
+                    delete search_data[key];
+                }else{
+                    search_data[key] = value.id;
+                }
             }
         })
 
@@ -48,11 +55,15 @@ app.controller('mydata', function (gets,$scope, $http, $location, $stateParams, 
     var _get = function(){
         $scope.isHide = true;
         search();
-        promise.then(function (Data) {  //正确请求成功时处理  
+        promise.then(function (Data) {  //正确请求成功时处理
+            console.log(Data)
+            if(!Data.data.data.articleList.length){
+                alert("搜索结果为0");
+                return;
+            }
             $scope.datas = Data.data.data.articleList;
             $scope.all_page = Math.ceil(Data.data.data.total/$scope.show_page);
             reloadPno();
-            console.info(Data);
             $scope.isHide = false;
         });
     }
@@ -62,9 +73,9 @@ app.controller('mydata', function (gets,$scope, $http, $location, $stateParams, 
     $scope.init_page = function(){
         $scope.rtime1 = "";
         $scope.rtime2 = "";
-        $scope.type = "";
-        $scope.status = "";
-        $location.url("/article/"+ 1 +"/"+10);
+        $scope.searchTypes = "";
+        $scope.searchState = "";
+        $state.go("main.article",{page:1,size:10});
         _get();
     }
 
@@ -198,10 +209,6 @@ app.controller('mydata', function (gets,$scope, $http, $location, $stateParams, 
     */
 
 })
-
-app.filter("Formats", function() { //可以注入依赖
-    return 1
-});
 
 app.filter("typeSwitch", function() { //可以注入依赖
     return function(text) {

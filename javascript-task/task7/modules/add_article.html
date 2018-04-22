@@ -7,44 +7,32 @@
             <div class="row">
                 <label for="title" class="laber-control col-md-2">标题名称</label>
                 <div class="col-md-8">
-                    <input type="text" id="title" class="form-control" ng-model="add_title" required>
+                    <input type="text" id="title" class="form-control" ng-model="addTitle" required>
                 </div>
             </div>
             <div class="row">
                 <label for="type" class="laber-control col-md-2">类型</label>
                 <div class="col-md-2">
-                    <select id="type" class="form-control" ng-model="add_type">
+                    <select id="type" ng-model="addType" ng-options="v.id as v.name for v in allType track by v.id" class="form-control" ng-click="add_()">
                         <option value="">请选择</option>
-                        <option value="0">首页Banner</option>
-                        <option value="1">找职位Banner</option>
-                        <option value="2">找精英Banner</option>
-                        <option value="3">行业大图</option>
                     </select>
-                   
                 </div>
                 <div class="col-md-2">
-                    <select id="type" class="form-control" ng-if="add_type == 3" ng-model="add_industry">
-                        <option value="">请选择</option>
-                        <option value="0">移动互联网</option>
-                        <option value="1">电子商务</option>
-                        <option value="2">企业服务</option>
-                        <option value="3">020</option>
-                        <option value="4">教育</option>
-                        <option value="5">金融</option>
-                        <option value="6">游戏</option>
+                    <select id="type2" class="form-control" ng-if="addType == 3" ng-model="$parent.add_ind" ng-options="i.id as i.name for i in industry track by i.id">
+                        <option value="" selected>请选择</option>
                     </select>
                 </div>
             </div>
             <div class="row">
                 <label for="explain" class="laber-control col-md-2">说明</label>
                 <div class="col-md-8">
-                    <input type="text" id="explain" class="form-control" ng-model="add_content">
+                    <input type="text" id="explain" class="form-control" ng-model="addContent">
                 </div>
             </div>
             <div class="row">
                 <label for="href" class="laber-control col-md-2">跳转链接</label>
                 <div class="col-md-8">
-                    <input type="url" id="href" class="form-control" ng-model="add_url">
+                    <input type="text" id="href" class="form-control" ng-model="addUrl">
                 </div>
             </div>
             <div class="row">
@@ -72,11 +60,11 @@
                             <tr ng-repeat="item in user_file">
                                 <td>{{item.name}}</td>
                                 <td>{{item.size | file_size}}</td>
-                                <td><div class="progress" style="margin:0"><div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" ng-style=""></div></td>
-                                <td><span class="glyphicon glyphicon-remove"></span></td>
+                                <td><div class="progress" style="margin:0"><div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" ng-style="{'width': progress + '%'}"></div></td>
+                                <td><span class="glyphicon " ng-class="state"></span></td>
                                 <td>
-                                    <button class="btn btn-xs btn-primary" ng-click="upload_img()">上传</button>
-                                    <button class="btn btn-xs btn-primary">删除</button>
+                                    <button class="btn btn-xs btn-primary" ng-click="upload_img()" ng-disabled="success">上传</button>
+                                    <button class="btn btn-xs btn-primary" ng-click="delete()">删除</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -85,8 +73,8 @@
             </div>
             <div class="row">
                 <div class="col-md-8 col-md-push-2">
-                    <button class="btn btn-danger" ng-click="online()" ng-disabled="!form_data.$valid || user_file == undefined">立刻上线</button>
-                    <button class="btn btn-success" ng-disabled="!form_data.$valid || user_file == undefined">存为草稿</button>
+                    <button class="btn btn-danger" ng-click="online(2)" ng-disabled="!form_data.$valid || !success">立刻上线</button>
+                    <button class="btn btn-success" ng-click="online(1)" ng-disabled="!form_data.$valid || !success">存为草稿</button>
                     <button class="btn btn-default pull-right" ui-sref="article">取消</button>
                 </div>
             </div>

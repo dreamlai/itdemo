@@ -1,6 +1,6 @@
-var check = angular.module("login", ["ngMessages"]);
+angular.module("userApp", ["ngMessages", "ui.router"])
 
-check.controller("check", function($scope, $http) {
+.controller("login", function(posts, $scope, $http, $location, $state) {
     $scope.check = function(){
         if(!$scope.name || $scope.name.length < 4 || $scope.name.length > 18){
             $scope.tips = "用户为空或长度错误！";
@@ -11,15 +11,14 @@ check.controller("check", function($scope, $http) {
                 name: $scope.name,
                 pwd: $scope.pwd
             }
-            $http({
-                method: "POST",    
-                url: "/carrots-admin-ajax/a/login",    
-                data:  $.param(formData),
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-            })
-            .then(function (data) {  //正确请求成功时处理  
+            posts.login(formData).then(function (data) {  //正确请求成功时处理  
                 if(data.data.message == "success"){
-                    window.location.href = "backstage.html";
+                    var userData = {
+                        iden: data.data.data.role.name,
+                        name: data.data.data.manager.name
+                    }
+                    sessionStorage.setItem("userData",JSON.stringify(userData));
+                    $state.go("main.tips");
                 }else{
                     $scope.tips = data.data.message;
                 }
