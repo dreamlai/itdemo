@@ -48,10 +48,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     .state("main.add", {
         url: "/add",
-        templateUrl: "./modules/add_article.html?ver=1.0.1",
+        templateUrl: "./modules/add_article.html?ver=1.0.2",
         resolve: {
             loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){    
-                return $ocLazyLoad.load('js/add_main.js?ver=1.0.1');    
+                return $ocLazyLoad.load('js/add_main.js?ver=1.0.2');    
             }]
         },
         controller:'add'

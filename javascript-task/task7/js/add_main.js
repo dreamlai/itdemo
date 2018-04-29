@@ -1,6 +1,6 @@
-var add = angular.module("userApp",["ui.bootstrap"]);
+var add = angular.module("userApp", ["ui.bootstrap", "ng.ueditor"]);
 
-add.controller('add', function(type, industry, $uibModal, posts, $interval, $scope){
+add.controller('add', function (type, industry, $uibModal, posts, $interval, $scope){
     $scope.allType = type;
     $scope.industry = industry;
     var i =0;
@@ -76,6 +76,10 @@ add.controller('add', function(type, industry, $uibModal, posts, $interval, $sco
         $scope.success = false;
         i =0;
     }
+	
+//	$scope.$watch("addContent", function(){
+//    	$scope.addContent = $scope.addContent;
+//	})
 })
 
 add.controller('modal', function($uibModalInstance, $scope, $state){
