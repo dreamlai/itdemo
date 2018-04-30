@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var add = angular.module("userApp", ["ui.bootstrap", "ng.ueditor", "ui.router", "ngMessages"]);
 
 add.controller('add', function ($location, alerts, type, industry, $uibModal, data, $interval, $scope, $state){
@@ -59,11 +58,6 @@ add.controller('add', function ($location, alerts, type, industry, $uibModal, da
             })
         }
     }
-=======
-var add = angular.module("userApp", ["ui.bootstrap", "ng.ueditor"]);
-
-add.controller('add', function (type, industry, $uibModal, posts, $interval, $scope){
->>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
     $scope.allType = type;
     $scope.industry = industry;
     var i =0;
@@ -77,11 +71,7 @@ add.controller('add', function (type, industry, $uibModal, posts, $interval, $sc
         reader.readAsDataURL(ele.files[0],"UTF-8")
         reader.addEventListener('load', function () {
             $scope.$apply(function(){
-<<<<<<< HEAD
                 // $scope.files = reader.result;
-=======
-                $scope.files = reader.result;
->>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
             });
         }, false)
         $scope.user_file = ele.files;
@@ -90,30 +80,7 @@ add.controller('add', function (type, industry, $uibModal, posts, $interval, $sc
         $scope.state = "glyphicon-remove";
     }
 
-<<<<<<< HEAD
     
-=======
-    $scope.online = function(state){
-        var params = {
-            title: $scope.addTitle,
-            type: $scope.addType,
-            img: $scope.files,
-            content: $scope.addContent,
-            status: state,
-        }
-        if($scope.addType == 3){
-            params["industry"] = $scope.add_ind;
-        }
-        posts.article(params).then(function(data){
-            if(data.data.message == "success"){
-                $uibModal.open({  
-                    templateUrl : "modules/popup.html",
-                    controller: "modal"
-                });
-            }
-        })
-    }
->>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
     
     $scope.upload_img = function(){
         var xhr = new XMLHttpRequest();
@@ -131,7 +98,6 @@ add.controller('add', function (type, industry, $uibModal, posts, $interval, $sc
         };
         xhr.send(formData);
         xhr.onreadystatechange = function(){
-<<<<<<< HEAD
             if(xhr.readyState == 4){
                 if(xhr.status == 200){
                     var data = JSON.parse(xhr.responseText);
@@ -139,12 +105,6 @@ add.controller('add', function (type, industry, $uibModal, posts, $interval, $sc
                         $scope.files = data.data.url;
                         // $scope.files = reader.result;
                     });
-=======
-            if(xhr.readyState === 4){
-                if(xhr.status == 200){
-                    var data = JSON.parse(xhr.responseText);
-                    $scope.files = data.data.url;
->>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
                 }
             }
         }
@@ -158,19 +118,6 @@ add.controller('add', function (type, industry, $uibModal, posts, $interval, $sc
         i =0;
     }
 	
-<<<<<<< HEAD
-=======
-//	$scope.$watch("addContent", function(){
-//    	$scope.addContent = $scope.addContent;
-//	})
-})
-
-add.controller('modal', function($uibModalInstance, $scope, $state){
-    $scope.ok = function(){
-        $uibModalInstance.close();
-        $state.go("main.article");
-    }
->>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
 })
 
 add.filter("file_size", function() { //可以注入依赖

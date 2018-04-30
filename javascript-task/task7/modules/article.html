@@ -85,15 +85,9 @@
                     <td>{{item.author }}</td>
                     <td>{{item.status|statusSwitch}}</td>
                     <td>
-<<<<<<< HEAD
                         <a type="button" class="btn btn-sm" ng-click="stateChange(item.id,item.status)">{{item.status|statusChange}}</a>
                         <a type="button" class="btn btn-sm" ui-sref="main.add({id: item.id})">编辑</a>
                         <a type="button" class="btn btn-sm" ng-click="dataDelete(item.id)">删除</a>
-=======
-                        <a type="button" class="btn btn-sm" ng-click=" vm.changeArticleStatus(item.id,item.status)">{{item.status|statusChange}}</a>
-                        <a type="button" class="btn btn-sm">编辑</a>
-                        <a type="button" class="btn btn-sm">删除</a>
->>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
                     </td>
                 </tr>
             </tbody>

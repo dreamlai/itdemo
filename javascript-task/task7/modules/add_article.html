@@ -7,14 +7,10 @@
             <div class="row">
                 <label for="title" class="laber-control col-md-2">标题名称</label>
                 <div class="col-md-8">
-<<<<<<< HEAD
                     <input type="text" id="title" name="title" class="form-control" ng-model="addTitle" ng-minlength="3" ng-maxlength="18" required>
                     <div ng-messages="form_data.title.$error">
                         <div ng-messages-include="modules/error.html"></div>
                     </div>
-=======
-                    <input type="text" id="title" class="form-control" ng-model="addTitle" required>
->>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
                 </div>
             </div>
             <div class="row">
@@ -40,14 +36,10 @@
             <div class="row">
                 <label for="href" class="laber-control col-md-2">跳转链接</label>
                 <div class="col-md-8">
-<<<<<<< HEAD
                     <input type="text" id="href" class="form-control" name="url" ng-model="addUrl" ng-minlength="3" ng-maxlength="18" required>
                     <div ng-messages="form_data.url.$error">
                         <div ng-messages-include="modules/error.html"></div>
                     </div>
-=======
-                    <input type="text" id="href" class="form-control" ng-model="addUrl">
->>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
                 </div>
             </div>
             <div class="row">
@@ -88,15 +80,9 @@
             </div>
             <div class="row">
                 <div class="col-md-8 col-md-push-2">
-<<<<<<< HEAD
                     <button class="btn btn-danger" ng-click="online(2)" ng-disabled="!form_data.$valid || !files || addContent == undefined">立刻上线</button>
                     <button class="btn btn-success" ng-click="online(1)" ng-disabled="!form_data.$valid || !files || addContent == undefined">存为草稿</button>
                     <button class="btn btn-default pull-right" ui-sref="main.article">取消</button>
-=======
-                    <button class="btn btn-danger" ng-click="online(2)" ng-disabled="!form_data.$valid || !success || addContent == undefined">立刻上线</button>
-                    <button class="btn btn-success" ng-click="online(1)" ng-disabled="!form_data.$valid || !success || addContent == undefined">存为草稿</button>
-                    <button class="btn btn-default pull-right" ui-sref="article">取消</button>
->>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
                 </div>
             </div>
         </form>

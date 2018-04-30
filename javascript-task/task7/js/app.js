@@ -47,19 +47,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     })
     .state("main.add", {
-<<<<<<< HEAD
         url: "/add?id",
         templateUrl: "./modules/add_article.html?ver=1.0.5",
         resolve: {
             loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){    
                 return $ocLazyLoad.load('js/add_main.js?ver=1.0.5');    
-=======
-        url: "/add",
-        templateUrl: "./modules/add_article.html?ver=1.0.2",
-        resolve: {
-            loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){    
-                return $ocLazyLoad.load('js/add_main.js?ver=1.0.2');    
->>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
             }]
         },
         controller:'add'
