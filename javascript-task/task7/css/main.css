@@ -192,7 +192,10 @@ a {
     .table>tbody>tr>td {
         vertical-align: middle;
         text-align: center;
+<<<<<<< HEAD
         max-width: 300px;
         word-wrap: break-word;
         word-break: break-all;
+=======
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
     }

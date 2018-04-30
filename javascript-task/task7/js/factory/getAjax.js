@@ -1,11 +1,23 @@
 angular.module("userApp")
+<<<<<<< HEAD
     .factory("data", function($http, $stateParams, $httpParamSerializerJQLike){
+=======
+    .factory("gets", function($http, $stateParams, $httpParamSerializerJQLike){
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
         return {
             search: function(search_data){
                 return $http.get('/carrots-admin-ajax/a/article/search', {  
                     params: search_data
                 })
+<<<<<<< HEAD
             },
+=======
+            }
+        }
+    })
+    .factory("posts", function($http, $stateParams, $httpParamSerializerJQLike){
+        return {
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
             article: function(params){
                 console.log(params)
                 return $http({
@@ -25,6 +37,7 @@ angular.module("userApp")
             },
             logout: function(){
                 return $http.post("/carrots-admin-ajax/a/logout")
+<<<<<<< HEAD
             },
             stateChange: function(id, state){
                 var params = {
@@ -86,5 +99,9 @@ angular.module("userApp")
                     }
                 });
             }
+=======
+            }
+            
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
         }
     })

@@ -1,6 +1,10 @@
 var app = angular.module("userApp", ["ui.bootstrap","ui.router"]);
 
+<<<<<<< HEAD
 app.controller('mydata', function (data, type, state, $scope, $http, $location, $stateParams, $filter, $state, alerts) {
+=======
+app.controller('mydata', function (type, state, gets, posts, $scope, $http, $location, $stateParams, $filter, $state) {
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
     $scope.jume_page = $stateParams.page;
     $scope.show_page = $stateParams.size;
     $scope.all_page =0;
@@ -16,6 +20,10 @@ app.controller('mydata', function (data, type, state, $scope, $http, $location, 
     }
 
     var search = function(){
+<<<<<<< HEAD
+=======
+
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
         if($scope.rtime1){
             $scope.rtime1 = $scope.rtime1.valueOf()
         }
@@ -49,9 +57,13 @@ app.controller('mydata', function (data, type, state, $scope, $http, $location, 
 
         $location.url($location.path()+"?" + $.param(search_data))
 
+<<<<<<< HEAD
         // $state.go($state.current+"?"+ $.param(search_data), {}, {reload: true});
 
         promise = data.search($.extend(search_data, page_num));
+=======
+        promise = gets.search($.extend(search_data, page_num));
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
     }
     var _get = function(){
         $scope.isHide = true;
@@ -76,12 +88,22 @@ app.controller('mydata', function (data, type, state, $scope, $http, $location, 
         $scope.rtime2 = "";
         $scope.searchTypes = "";
         $scope.searchState = "";
+<<<<<<< HEAD
         $state.go($state.current, {page:1,size:10}, {reload: true});
+=======
+        $state.go("main.article",{page:1,size:10});
+        _get();
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
     }
 
     $scope.jume = function(page){
         if (page == $scope.jume_page || page == "···") return;
+<<<<<<< HEAD
         $state.go($state.current, {"page":page,"size":$scope.show_page}, {reload: true});
+=======
+        $location.url("/article/"+ page +"/"+$scope.show_page);
+        _get()
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
     };
 
     $scope.j_index = function(){
@@ -136,11 +158,19 @@ app.controller('mydata', function (data, type, state, $scope, $http, $location, 
         if(!$scope.show_page){
             return false;
         }else if(!$scope.j_page){
+<<<<<<< HEAD
             $state.go($state.current, {"page":1,"size":$scope.show_page}, {reload: true});
         }else{
             $state.go($state.current, {"page":$scope.j_page,"size":$scope.show_page}, {reload: true});
         }
         // _get()
+=======
+            $location.url("/article/"+ 1 +"/"+$scope.show_page);
+        }else{
+            $location.url("/article/"+ $scope.j_page +"/"+$scope.show_page);
+        }
+        _get()
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
     }
 
     $scope.isDisabled = function(num){
@@ -163,8 +193,13 @@ app.controller('mydata', function (data, type, state, $scope, $http, $location, 
     };
 
     $scope.search = function(){
+<<<<<<< HEAD
         _get();
         // $state.go($state.current, {"page": 1,"size": $scope.show_page}, {reload: true});
+=======
+        $location.url("/article/"+ 1 +"/"+$scope.show_page);
+        _get();
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
     }
 
     $scope.rtime1;
@@ -206,6 +241,7 @@ app.controller('mydata', function (data, type, state, $scope, $http, $location, 
     *startPopup   最小时间  没有限制 最大时间 endTime
     *endPopup 最小时间 startTime 最大时间 today
     */
+<<<<<<< HEAD
    
    $scope.stateChange = function(id, st){
         if(st == 1){
@@ -256,6 +292,8 @@ app.controller('mydata', function (data, type, state, $scope, $http, $location, 
    $scope.edit = {
    }
 
+=======
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
 
 })
 

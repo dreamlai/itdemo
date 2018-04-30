@@ -1,5 +1,9 @@
 import '../css/home.scss';
 
+<<<<<<< HEAD
+=======
+sessionStorage.clear();
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
 var item = document.querySelectorAll(".game-list .item"),
 
     a_target = document.querySelectorAll(".game-list a"),
@@ -92,4 +96,7 @@ mask.addEventListener("click", function(){
     isOn = false;
 })
 
+<<<<<<< HEAD
 sessionStorage.clear();
+=======
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64

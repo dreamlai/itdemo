@@ -8,14 +8,22 @@ html, body, .content-more, .content-wrap {
 }
 .content-wrap {
     position: relative;
+<<<<<<< HEAD
     transition: left .3s;
+=======
+    transition: left .5s;
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
     background: inherit;
     left: 0;
     top: 0;
 
     &.on {
         position: fixed;
+<<<<<<< HEAD
         // left: 3rem;
+=======
+        left: 3rem;
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
 
         @media(max-width: 400px){
             left: 2rem;
@@ -29,7 +37,11 @@ html, body, .content-more, .content-wrap {
     width: 3rem;
     height: 100%;
     background: #fff;
+<<<<<<< HEAD
     transition: left .3s;
+=======
+    transition: left .5s;
+>>>>>>> bdc96a3a06821818e0e177bdd380418fb7066e64
     
     @media(max-width: 400px){
         width: 2rem;
