@@ -1,0 +1,95 @@
+input:-webkit-autofill , textarea:-webkit-autofill, select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+.login {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100vh;
+}
+.login-box {
+	width: 350px;
+	font-size: 20px;
+	padding: 15px 20px;
+	background: rgba(255,255,255,.8);
+}
+	.title {
+		color: #000;
+		text-align: center;
+	}
+	.login-box label {
+		position: relative;
+		display: block;
+		height: 50px;
+		margin-top: 15px;
+		background: #fff;
+	}
+	.login-box label:after {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 1px;
+		height: 30px;
+		top: 50%;
+		left: 55px;
+		transform: translateY(-50%);
+		background: #eaedee;
+	}
+		.login-box .icon {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 20px;
+			transform: translateY(-50%);
+			width: 15px;
+			height: 23px;
+		}
+			.username .icon {
+				background: url(../images/iphone.png) no-repeat;
+			}
+			.password .icon {
+				background: url(../images/pass.png) no-repeat;
+			}
+		.login-box input {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 75px;
+			transform: translateY(-50%);
+			height: 23px;
+			width: calc(100% - 75px);
+			border: 0;
+			padding: 0;
+			font-size: 15px;
+            color: #333;
+		}
+		.login-box input:-ms-input-placeholder{
+		    color: #999;
+		}
+
+		.login-box input::-webkit-input-placeholder{
+		    color: #999;
+		}
+	.tips {
+		position: absolute;
+		color: red;
+		line-height: 2;
+		font-size: 16px;
+	}
+	.login-box .btn {
+		width: 100%;
+		height: 50px;
+		text-align: center;
+		background: #03A9F4;
+		border: 0;
+		cursor: pointer;
+		font-size: 20px;
+		color: inherit;
+		font-weight: inherit;
+		letter-spacing: 10px;
+		margin-top: 30px;
+		border-radius: 5px;
+        outline: none;
+	}

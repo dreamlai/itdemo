@@ -1,0 +1,17 @@
+<div class="login">
+    <div class="login-box">
+        <p class="title">后台登录</p>
+        <form name="myForm" >
+            <label class="username" for="name">
+                <i class="icon"></i>
+                <input type="text" ng-model="name" ng-focus="clear()" placeholder="请输入用户名" id="name" ng-minlength="4"  ng-maxlength="18" autofocus required>
+            </label>
+            <label class="password" for="pass">
+                <i class="icon"></i>
+                <input type="password" ng-model="pwd" ng-focus="clear()" placeholder="请输入密码" id="pass" ng-minlength="4"  ng-maxlength="18" required>
+            </label>
+            <p class="tips" ng-bind="tips"></p>
+            <button class="btn" ng-click="check()">登录</button>
+        </form>
+    </div>
+</div>
