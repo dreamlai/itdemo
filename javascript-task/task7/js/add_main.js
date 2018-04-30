@@ -91,10 +91,8 @@ add.controller('add', function ($location, alerts, type, industry, $uibModal, da
                 $scope.progress = Math.floor(i / (e.total/10000) * 100);
                 if(i > (e.total/10000)){
                     $interval.cancel(timer);
-                    $scope.state = "glyphicon-ok";
-                    $scope.success = true;
                 }
-            }, 100)
+            }, 500)
         };
         xhr.send(formData);
         xhr.onreadystatechange = function(){
@@ -103,6 +101,8 @@ add.controller('add', function ($location, alerts, type, industry, $uibModal, da
                     var data = JSON.parse(xhr.responseText);
                     $scope.$apply(function(){
                         $scope.files = data.data.url;
+                        $scope.state = "glyphicon-ok";
+                        $scope.success = true;
                         // $scope.files = reader.result;
                     });
                 }
