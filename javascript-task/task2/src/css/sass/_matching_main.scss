@@ -1,0 +1,91 @@
+.title, .matching, .control, .details {
+    width: 100%;
+    background: #fff;
+    margin-bottom: .05rem;
+}
+.title {
+    color: #444;
+    font-weight: 700;
+    line-height: 3;
+    text-align: center;
+}
+.matching {
+    font-size: .14rem;
+    font-weight: 500;
+    min-height: 1.5rem;
+    padding: .1rem 0;
+    overflow: hidden;
+
+    .player {
+        position: relative;
+        float: left;
+        text-align: center;
+        width: 50%;
+        line-height: 3;
+        padding-left: .3rem;
+        box-sizing: border-box;
+
+        .num {
+            position: relative;
+            padding: 0 .05rem;
+            
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                left: -.7rem;
+                top: -.08rem;
+                width: .3rem;
+                height: .3rem;
+                background: url(../images/icon.png) no-repeat;
+            }
+        }
+
+        &.killer .num:before {
+            background-position: -.1rem -3.01rem;
+        }
+
+        &.civilian .num:before {
+            background-position: -.1rem -3.52rem;
+        }
+    }
+    
+}
+.control, .details {
+    height: .8rem;
+}
+.control {
+    box-sizing: border-box;
+    padding-top: .15rem;
+    text-align: center;
+    
+    .tips-text, .input-num, .notice-text {
+        font-weight: 700;
+    }
+
+    .input-num {
+        font-size: .18rem;
+        width: .3rem;
+        outline: none;
+        background: #f4f5f5;
+        border: none;
+        text-align: center;
+        color: #fab344;
+        border: 1px solid transparent;
+
+        &:focus {
+            border: 1px solid #fab344;
+        }
+    }
+
+    .notice-text {
+        font-size: .12rem;
+        color: #fab344;
+    }
+}
+    
+.enter-watch {
+    font-size: .2rem;
+}
+
+

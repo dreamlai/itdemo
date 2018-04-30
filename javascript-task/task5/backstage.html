@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理-首页</title>
+    <link rel="stylesheet" href="css/back-main.css">
+</head>
+<body>
+    <header class="clearfix">
+        <h1 class="title">后台管理系统</h1>
+        <div class="user-set">
+            <span class="user">未登录</span>
+            <button class="close">退出</button>
+        </div>
+    </header>
+    <div class="main">
+        <div class="sibe-bar">
+            <ul>
+                <li class="item"><a href="">学员列表</a></li>
+                <li class="item"><a href="">新增学员</a></li>
+                <li class="item"><a href="">个人信息</a></li>
+            </ul>  
+        </div>
+        <div class="content">
+                
+        </div>
+    </div>
+</body>
+<script>
+    var data = JSON.parse(sessionStorage.getItem("data"));
+    if(!data){
+        window.location.href = "index.html";
+    }
+    var user = document.querySelector(".user");
+    user.innerHTML = data.data.manager.name;
+    var close = document.querySelector(".close");
+    close.addEventListener("click", function(){
+        sessionStorage.clear();
+        window.location.href = "index.html";
+    })
+</script>
+</html>

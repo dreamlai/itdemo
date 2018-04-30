@@ -1,0 +1,100 @@
+@charset "UTF-8";
+html {
+  font-size: 625%; }
+
+body, div, span, h1, h2, h3, h4, h5, h6, p, a, em, img, i,
+dl, dt, dd, ol, ul, li, form, label, table, tbody, tfoot,
+thead, tr, th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, section,
+time, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+a {
+  text-decoration: none;
+  color: #fff; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 0; }
+
+body {
+  line-height: 1;
+  font: .16rem/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+  color: #333;
+  background-color: #f0f0f0;
+  font-weight: 100;
+  -moz-user-select: none;
+  /*火狐*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -ms-user-select: none;
+  /*IE10*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none; }
+
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
+body {
+  background: #29bde0;
+  padding: 15vh 10% 0; }
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer; }
+
+.box img {
+  max-width: 100%; }
+
+.word {
+  font-size: 0.2rem;
+  color: #fff;
+  line-height: 5;
+  font-weight: 600; }
+
+.jume {
+  position: fixed;
+  top: 5vh;
+  right: 5vh;
+  color: #fff;
+  font-size: 0.14rem;
+  padding: 0.05rem 0.15rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  z-index: 1; }

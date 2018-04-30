@@ -1,0 +1,69 @@
+<div class="article-content">
+    <div class="article-header">
+        <b>Article列表</b>
+    </div>
+    <div class="article-table">
+        <div class="row">
+            <label for="title" class="laber-control col-md-2">标题名称</label>
+            <div class="col-md-8">
+                <input type="text" id="title" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <label for="type" class="laber-control col-md-2">类型</label>
+            <div class="col-md-2">
+                <select id="type" class="form-control">
+                    <option value="all">全部</option>
+                    <option value="">首页Banner</option>
+                    <option value="">找职位Banner</option>
+                    <option value="">找精英Banner</option>
+                    <option value="">行业大图</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <label for="explain" class="laber-control col-md-2">说明</label>
+            <div class="col-md-8">
+                <input type="text" id="explain" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <label for="href" class="laber-control col-md-2">跳转链接</label>
+            <div class="col-md-8">
+                <input type="text" id="href" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <label for="time" class="laber-control col-md-2">配图</label>
+            <div class="col-md-8">
+                <label for="file" class="btn btn-primary col-md-2">选择文件</label>
+                <input type="file" id="file" class="sr-only file-input" accept="image/*">
+                <div class="col-md-12">
+                    <img src="" alt="配图预览" class="img-src">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7 col-md-push-2">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>图片名</th>
+                            <th>文件大小</th>
+                            <th>进度</th>
+                            <th>操作</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col-md-8 col-md-push-2">
+                <button class="btn btn-danger">立刻上线</button>
+                <button class="btn btn-success">存为草稿</button>
+                <button class="btn btn-default pull-right" ng-click="go('article')">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
