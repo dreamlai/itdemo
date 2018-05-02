@@ -1,0 +1,43 @@
+<!--pages/result/r.wxml-->
+<view class='header'>
+  <text>最适合你的职业推荐</text>
+</view>
+<view class='main'>
+   <view class='swiper-tab'>
+     <view wx:for='{{results}}' class="swiper-tab-list {{currentTab== index  ? 'on' : ''}}" data-current="{{index}}" bindtap="clickTab">{{item.name}}</view> 
+  </view>
+  <swiper current='{{currentTab}}' duration='300' bindchange="swiperTab">
+    <swiper-item wx:for='{{results}}'>
+      <view class='section'>
+        <text class='td'>职业门槛</text>
+        <text class='dd'>{{item.threshold}}星</text>
+      </view>
+      <view class='section'>
+        <text class='td'>难易程度</text>
+        <text class='dd'>{{item.difficult}}星</text>
+      </view>
+      <view class='section'>
+        <text class='td'>成长周期</text>
+        <text class='dd'>{{item.cycle}}</text>
+      </view>
+      <view class='section'>
+        <text class='td'>求贤企业</text>
+        <text class='dd'>{{item.company}}</text>
+      </view>
+      <view class='section'>
+        <text class='td'>入学基础</text>
+        <text class='dd'>{{item.basis}}</text>
+      </view>
+      <view class='section'>
+        <text class='td'>薪资待遇</text>
+        <!-- <text class='dd'>{{item.salary}}</text> -->
+        <view class='dd'>
+          <view wx:for='{{results[index].salary}}' wx:for-item='i' wx:for-key='in'>{{i.time}} {{i.salary}}</view>
+        </view>
+      </view>
+      <view class='user-count'>
+        <text>{{item.onlineUserCount}}人在学</text>
+      </view>
+    </swiper-item>
+  </swiper> 
+</view>
