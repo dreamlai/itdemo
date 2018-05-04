@@ -6,12 +6,12 @@ angular.module("userApp",["ui.router"])
         $scope.subActive = 3;
     }
     $scope.sideMent = sideMent;
-    var data = JSON.parse(sessionStorage.getItem("userData"));
-    if(!data){
+    var user = JSON.parse(sessionStorage.getItem("userData"));
+    if(!user){
         $state.go("login");
     }else{
-        $scope.iden = data.iden;
-        $scope.name = data.name;
+        $scope.iden = user.iden;
+        $scope.name = user.name;
     }
     $scope.logout = function(){
         data.logout().then(function(data){

@@ -23,7 +23,7 @@
                     <span class="glyphicon glyphicon-pencil"></span>{{item.name}}<span class="glyphicon glyphicon-menu-left"></span>
                 </a>
                 <ul class="nav sub-list" ng-class="{active: active == $index}">
-                    <li ng-repeat="subItem in item.sub"><a ng-click="click(subItem.id)" ng-class="{active: subActive == subItem.id}" ui-sref="{{subItem.url}}">{{subItem.name}}</a></li>
+                    <li ng-repeat="subItem in item.sub"><a ng-click="click(subItem.id)" ng-class="{active: subActive == subItem.id}" ui-sref="main.article">{{subItem.name}}</a></li>
                 </ul>
             </li>
         </ul>

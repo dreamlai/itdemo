@@ -20,7 +20,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state("login", {
         url: "/login",
         controller: "login",
-        templateUrl: "./modules/login.html?ver=1.0.1",
+        templateUrl: "./modules/login.html?ver=1.0.3",
         resolve: {
             loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){    
                 return $ocLazyLoad.load('js/login_main.js');    

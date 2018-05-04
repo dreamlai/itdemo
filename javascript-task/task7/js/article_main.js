@@ -57,11 +57,11 @@ app.controller('mydata', function (data, type, state, $scope, $http, $location, 
         $scope.isHide = true;
         search();
         promise.then(function (Data) {  //正确请求成功时处理
-            console.log(Data)
-            if(!Data.data.data.articleList.length){
-                alert("搜索结果为0");
-                return;
-            }
+            // console.log(Data)
+            // if(!Data.data.data.articleList.length){
+            //     alert("搜索结果为0");
+            //     return;
+            // }
             $scope.datas = Data.data.data.articleList;
             $scope.all_page = Math.ceil(Data.data.data.total/$scope.show_page);
             reloadPno();

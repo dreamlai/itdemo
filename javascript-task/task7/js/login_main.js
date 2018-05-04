@@ -28,4 +28,6 @@ angular.module("userApp", ["ngMessages", "ui.router"])
     $scope.clear = function(){
         $scope.tips = "";
     }
+    $scope.tips = "初始账号：admin ，密码：123456";
+    
 });
